@@ -1,4 +1,5 @@
-TEMPLATE = app
-HEADERS += finddialog.h
-SOURCES += finddialog.cpp main.cpp
 QT += widgets
+
+HEADERS = finddialog.h
+SOURCES = finddialog.cpp \
+		  main.cpp

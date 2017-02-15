@@ -1,3 +1,3 @@
-TEMPLATE = app
-SOURCES += quit.cpp
 QT += widgets
+
+SOURCES = quit.cpp

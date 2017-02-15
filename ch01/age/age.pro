@@ -1,3 +1,3 @@
-TEMPLATE = app
-SOURCES += age.cpp
 QT += widgets
+
+SOURCES = age.cpp
