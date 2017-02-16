@@ -13,8 +13,16 @@ class MainWindow : public QMainWindow
 public:
     MainWindow();
 
+protected:
+    void closeEvent(QCloseEvent *event);
+
 private slots:
+    void newFile();
+    void open();
+    bool save();
+    bool saveAs();
     void updateStatusBar();
+    void spreadsheetModified();
 
 private:
     void createActions();
@@ -22,10 +30,18 @@ private:
     void createContextMenus();
     void createToolBars();
     void createStatusBar();
+    void readSettings();
+    void writeSettings();
+    bool okToContinue();
+    bool loadFile(const QString &fileName);
+    bool saveFile(const QString &fileName);
+    void setCurrentFile(const QString &fileName);
+    QString strippedName(const QString &fullFileName);
 
     Spreadsheet *spreadsheet;
     QLabel *locationLabel;
     QLabel *formulaLabel;
+    QString curFile;
 
     QMenu *fileMenu;
     QMenu *editMenu;
